@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="30">
+ <tileset firstgid="1" name="interior" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="interior.png" width="512" height="512"/>
+  <tile id="161">
+   <animation>
+    <frame tileid="162" duration="400"/>
+    <frame tileid="161" duration="100"/>
+    <frame tileid="163" duration="400"/>
+    <frame tileid="161" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer id="1" name="floor" width="20" height="10">
+  <data encoding="csv">
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,
+49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49
+</data>
+ </layer>
+ <layer id="2" name="barriers" width="20" height="10">
+  <data encoding="csv">
+55,98,98,98,98,98,55,55,55,55,55,55,55,98,98,98,98,98,98,55,
+55,114,114,114,114,114,0,0,0,0,0,0,0,114,114,114,114,114,114,55,
+55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,55,
+55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,55,
+55,83,104,101,85,0,0,0,0,0,0,0,0,0,0,103,101,84,83,55,
+55,114,114,114,114,0,0,0,0,0,0,0,0,0,0,114,114,114,114,55,
+55,0,0,0,130,131,0,0,0,0,0,0,0,0,0,0,0,0,0,55,
+55,0,0,0,146,147,0,0,0,0,0,0,0,0,0,0,0,15,15,55,
+55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,31,55,
+55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,47,55
+</data>
+ </layer>
+ <objectgroup id="4" name="chests">
+  <object id="19" name="chest" type="chest" gid="148" x="320" y="180" width="32" height="32">
+   <properties>
+    <property name="sprite" value="chest"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+  <object id="22" name="chest" type="chest" gid="148" x="360" y="180" width="32" height="32">
+   <properties>
+    <property name="sprite" value="chest"/>
+    <property name="type" value="item"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="clocks">
+  <object id="29" name="clock" gid="162" x="192" y="32" width="32" height="32"/>
+ </objectgroup>
+</map>

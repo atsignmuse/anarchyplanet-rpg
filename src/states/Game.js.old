@@ -1,0 +1,79 @@
+/* globals __DEV__ */
+import Phaser from 'phaser'
+import Mushroom from '../sprites/Mushroom'
+import Map from '../maps/Map'
+import lang from '../lang'
+
+const bakery = {
+  imageUrl: '../assets/bakery_bakery1.csv',
+  tilesetImage: 'interior',
+  createLayerName: 'land_1'
+}
+
+export default class extends Phaser.State {
+  init () {}
+  preload () {
+    this.game.load.tilemap(
+      'bakery1',
+      './assets/bakery_bakery1.csv',
+      null,
+      Phaser.Tilemap.CSV
+    )
+    this.game.load.tilemap(
+      'bakery2',
+      './assets/bakery_bakery2.csv',
+      null,
+      Phaser.Tilemap.CSV
+    )
+    this.game.load.image('tiles', './assets/interior.png')
+  }
+
+  create () {
+    // const bannerText = lang.text('welcome')
+    // let banner = this.add.text(
+    //   this.world.centerX,
+    //   this.game.height - 80,
+    //   bannerText,
+    //   {
+    //     font: '40px Bangers',
+    //     fill: '#77BFA3',
+    //     smoothed: false
+    //   }
+    // )
+
+    this.game.physics.startSystem(Phaser.Physics.ARCADE)
+
+    banner.padding.set(10, 16)
+    banner.anchor.setTo(0.5)
+
+    this.mushroom = new Mushroom({
+      game: this.game,
+      x: this.world.centerX,
+      y: this.world.centerY,
+      asset: 'mushroom'
+    })
+
+    this.game.add.existing(this.mushroom)
+    this.map = new Map({
+      game: this.game,
+      key: null,
+      tileWidth: 32,
+      tileHeight: 32,
+      height: 400,
+      width: 800
+    })
+
+    this.bakery1 = this.game.add.tilemap('bakery1')
+    this.bakery2 = this.game.add.tilemap('bakery2')
+
+    this.bakery1.addTilesetImage('tiles')
+    this.bakery2.addTilesetImage('tiles')
+    this.house = this.bakery1.createLayer(0)
+    this.house = this.bakery2.createLayer(0)
+  }
+  render () {
+    // if (__DEV__) {
+    //   this.game.debug.spriteInfo(this.mushroom, 32, 32)
+    // }
+  }
+}
