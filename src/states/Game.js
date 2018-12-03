@@ -17,7 +17,7 @@ export default class extends Phaser.State {
 
       if (Phaser.Rectangle.intersects(boundsA, boundsB)) {
         if (!this.clockOverlap) {
-          console.log('YES!')
+          // console.log('YES!')
           this.clockOverlap = true
           setTimeout(this.resetClockOverlap, 3000)
         }
@@ -29,7 +29,7 @@ export default class extends Phaser.State {
     this.game.physics.startSystem(Phaser.Physics.ARCADE)
     this.game.world.setBounds(0, 0, 20 * 32, 10 * 32)
     this.cursors = this.game.input.keyboard.createCursorKeys()
-    console.log(this.cursors)
+    // console.log(this.cursors)
 
     this.map = this.game.add.tilemap('inside')
     this.map.addTilesetImage('interior', 'tiles')
@@ -49,20 +49,20 @@ export default class extends Phaser.State {
       this.chests
     )
 
-    this.sprite = this.game.add.sprite(200, 200, 'tiles')
-    this.sprite.inputEnabled = true
-    this.sprite.input.enableDrag()
-    let style = {
-      font: '12px Arial',
-      fill: '#ff0044',
-      wordWrap: true,
-      wordWrapWidth: this.sprite.width,
-      align: 'center',
-      backgroundColor: '#ffff00'
-    }
-
-    this.text = this.game.add.text(0, 0, '- text on a sprite -\ndrag me', style)
-    console.log(this.map)
+    // this.sprite = this.game.add.sprite(200, 200, 'tiles')
+    // this.sprite.inputEnabled = true
+    // this.sprite.input.enableDrag()
+    // let style = {
+    //   font: '12px Arial',
+    //   fill: '#ff0044',
+    //   wordWrap: true,
+    //   wordWrapWidth: this.sprite.width,
+    //   align: 'center',
+    //   backgroundColor: '#ffff00'
+    // }
+    //
+    // this.text = this.game.add.text(0, 0, '- text on a sprite -\ndrag me', style)
+    // console.log(this.map)
     // clock
     this.clock = this.game.add.sprite(192, 0, 'tiles', 163)
     this.clock.animations.add('ticktock', [162, 161, 163, 161], 4, true)
