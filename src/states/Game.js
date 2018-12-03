@@ -86,9 +86,9 @@ export default class extends Phaser.State {
     this.checkOverlap(this.hero, this.clock)
 
     navigate(this.cursors, this.hero)
-
-    this.text.x = Math.floor(this.sprite.x + this.sprite.width / 2)
-    this.text.y = Math.floor(this.sprite.y + this.sprite.height / 2)
+    //
+    // this.text.x = Math.floor(this.sprite.x + this.sprite.width / 2)
+    // this.text.y = Math.floor(this.sprite.y + this.sprite.height / 2)
   }
   render () {}
 }
